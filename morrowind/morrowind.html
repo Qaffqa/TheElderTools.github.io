@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morrowind Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        label,
+        select,
+        input,
+        fieldset {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        fieldset {
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Morrowind Build Planner</h1>
+    <form id="characterForm">
+        <label>
+            Name:
+            <input type="text" name="name" required />
+        </label>
+        <label>
+            Sex:
+            <select name="sex" id="sexSelect" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </label>
+        <label>
+            Race:
+            <select name="race" id="raceSelect" required>
+                <option value="">--Choose a Race--</option>
+                <option value="Argonian">Argonian</option>
+                <option value="Breton">Breton</option>
+                <option value="Dark Elf">Dark Elf</option>
+                <option value="High Elf">High Elf</option>
+                <option value="Imperial">Imperial</option>
+                <option value="Khajiit">Khajiit</option>
+                <option value="Nord">Nord</option>
+                <option value="Orc">Orc</option>
+                <option value="Redguard">Redguard</option>
+                <option value="Wood Elf">Wood Elf</option>
+            </select>
+        </label>
+
+        <label>
+            Birthsign:
+            <select name="birthsign" id="birthsignSelect" required>
+                <option value="">--Choose a Birthsign--</option>
+                <option value="The Apprentice">The Apprentice</option>
+                <option value="The Atronach">The Atronach</option>
+                <option value="The Lady">The Lady</option>
+                <option value="The Lord">The Lord</option>
+                <option value="The Lover">The Lover</option>
+                <option value="The Mage">The Mage</option>
+                <option value="The Ritual">The Ritual</option>
+                <option value="The Serpent">The Serpent</option>
+                <option value="The Shadow">The Shadow</option>
+                <option value="The Steed">The Steed</option>
+                <option value="The Thief">The Thief</option>
+                <option value="The Tower">The Tower</option>
+                <option value="The Warrior">The Warrior</option>
+            </select>
+        </label>
+
+        <fieldset>
+            <legend>Custom Class</legend>
+
+            <label>
+                Class Name:
+                <input type="text" name="ClassName" required />
+            </label>
+
+            <label>
+                Specialization:
+                <select name="specialization" required>
+                    <option value="">--Choose Specialization--</option>
+                    <option value="Combat">Combat</option>
+                    <option value="Magic">Magic</option>
+                    <option value="Stealth">Stealth</option>
+                </select>
+            </label>
+
+            <label>
+                Favored Attributes:
+                <select name="attribute1" required>
+                    <option value="">--Choose Attribute--</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Willpower">Willpower</option>
+                    <option value="Agility">Agility</option>
+                    <option value="Speed">Speed</option>
+                    <option value="Endurance">Endurance</option>
+                    <option value="Personality">Personality</option>
+                    <option value="Luck">Luck</option>
+                </select>
+                <select name="attribute2" required>
+                    <option value="">--Choose Attribute--</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Willpower">Willpower</option>
+                    <option value="Agility">Agility</option>
+                    <option value="Speed">Speed</option>
+                    <option value="Endurance">Endurance</option>
+                    <option value="Personality">Personality</option>
+                    <option value="Luck">Luck</option>
+                </select>
+            </label>
+
+            <label>Major Skills (Pick 5):</label>
+            <!-- Placeholder, to be replaced with populated dropdowns -->
+            <select name="major1" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="major2" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="major3" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="major4" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="major5" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+
+            <label>Minor Skills (Pick 5):</label>
+            <select name="minor1" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="minor2" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="minor3" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="minor4" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+            <select name="minor5" required>
+                <option value="">--Choose a Skill--</option>
+                <optgroup label="Combat">
+                    <option value="Armorer">Armorer</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Axe">Axe</option>
+                    <option value="Block">Block</option>
+                    <option value="Blunt Weapon">Blunt Weapon</option>
+                    <option value="Heavy Armor">Heavy Armor</option>
+                    <option value="Long Blade">Long Blade</option>
+                    <option value="Medium Armor">Medium Armor</option>
+                    <option value="Spear">Spear</option>
+                </optgroup>
+                <optgroup label="Stealth">
+                    <option value="Acrobatics">Acrobatics</option>
+                    <option value="Hand-to-hand">Hand-to-hand</option>
+                    <option value="Short Blade">Short Blade</option>
+                    <option value="Light Armor">Light Armor</option>
+                    <option value="Marksman">Marksman</option>
+                    <option value="Mercantile">Mercantile</option>
+                    <option value="Security">Security</option>
+                    <option value="Sneak">Sneak</option>
+                    <option value="Speechcraft">Speechcraft</option>
+                </optgroup>
+                <optgroup label="Magic">
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Destruction">Destruction</option>
+                    <option value="Enchant">Enchant</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Mysticism">Mysticism</option>
+                    <option value="Restoration">Restoration</option>
+                    <option value="Unarmored">Unarmored</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <button type="submit">Generate Build</button>
+    </form>
+</body>
+
+</html>
